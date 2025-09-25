@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="exc1.css">
+</head>
+<body>
+    <h1 id="h1">Licznik kliknięć: 0</h1>
+    <button id="button1">Dodaj 1</button>
+    <button id="button2">Resetuj</button>
+
+    <script>
+        let add = document.getElementById("button1");
+        let reset = document.getElementById("button2");
+        let counter = 0;
+        let h1 = document.getElementById("h1");
+
+        function dodaj() {
+            counter += 1;
+            h1.innerHTML = "Liczba kliknięć: " + counter;
+        }
+
+        function resetuj() {
+            counter = 0;
+            h1.innerHTML = "Liczba kliknięć: " + counter;
+        }
+
+        add.addEventListener("click", dodaj);
+        reset.addEventListener("click", resetuj);
+    </script>
+</body>
+</html>
