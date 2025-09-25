@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="exc2.css">
+</head>
+<body>
+    <div id="logowanie">
+        <h2>Wpisz nazwę użytkownika oraz hasło</h2>
+        <input type="text" id="input1" placeholder="Nazwa użytkownika"> <br>
+        <input type="password" id="input2" placeholder="Hasło"> <br>
+        <button id="loginBtn">Zaloguj</button>
+    </div>
+
+    <script>
+        const loginBtn = document.getElementById('loginBtn');
+
+        loginBtn.addEventListener('click', function() {
+            const username = document.getElementById('input1').value;
+            const password = document.getElementById('input2').value;
+
+            if(username === "" || password === "") {
+                alert("Wypełnij oba pola!");
+                return;
+            }
+
+            const confirmed = confirm(`Czy na pewno chcesz się zalogować jako "${username}"?`);
+
+            if(confirmed) {
+                alert("Zalogowano!");
+            } else {
+                alert("Logowanie anulowane.");
+            }
+        });
+    </script>
+</body>
+</html>
